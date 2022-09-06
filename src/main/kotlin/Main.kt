@@ -1,8 +1,8 @@
-import twosum.twoSum
+import twosum.twoSumCleaner
 
 fun main(args: Array<String>) {
 
-    val result = twoSum(arrayOf(5, 7, 9, 45, 90, 13, 20).toIntArray(), 33)
-    print(result.joinToString())
+    val result = twoSumCleaner(arrayOf(5, 7, 9, 45, 90, 13, 20).toIntArray(), 33)
+    print(result?.joinToString())
 
 }
