@@ -46,3 +46,16 @@ fun twoSum(numbers: IntArray, target: Int): IntArray? {
     return null
 }
 
+//O(n)
+fun twoSumOnePass(numbers: IntArray, target: Int): IntArray? {
+    val hashMap = hashMapOf<Int,Int>()
+    for (index in numbers.indices){
+        val complement = target - numbers[index]
+        if (hashMap.containsKey(complement)){
+            return intArrayOf(hashMap.getValue(complement), index)
+        }
+        hashMap[numbers[index]] = index
+    }
+    return null
+}
+
