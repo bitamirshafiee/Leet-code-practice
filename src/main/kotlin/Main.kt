@@ -1,7 +1,8 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import twosum.twoSum
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main(args: Array<String>) {
+
+    val result = twoSum(arrayOf(5, 7, 9, 45, 90, 13, 20).toIntArray(), 33)
+    print(result.joinToString())
+
 }
