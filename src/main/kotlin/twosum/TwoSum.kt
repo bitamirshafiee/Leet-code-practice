@@ -24,8 +24,23 @@ fun twoSumCleaner(numbers: IntArray, target: Int): IntArray? {
         for (secondNumberToAdd in firstNumberToAdd + 1 until numbers.size) {
             val s = numbers[firstNumberToAdd] + numbers[secondNumberToAdd]
             if (s == target) {
-                return listOf(firstNumberToAdd,secondNumberToAdd).toIntArray()
+                return intArrayOf(firstNumberToAdd,secondNumberToAdd)
             }
+        }
+    }
+    return null
+}
+
+//O(n)
+fun twoSum(numbers: IntArray, target: Int): IntArray? {
+    val hashMap = hashMapOf<Int,Int>()
+    for (index in numbers.indices){
+        hashMap[numbers[index]] = index
+    }
+    for (index in numbers.indices){
+        val complement = target - numbers[index]
+        if (hashMap.containsKey(complement) && hashMap[complement] != index){
+            return intArrayOf(index, hashMap.getValue(complement))
         }
     }
     return null
